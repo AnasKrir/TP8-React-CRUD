@@ -1,70 +1,222 @@
-# Getting Started with Create React App
+# TP 8 — React CRUD avec Axios & Backend Mock (json-server)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18.x-61DAFB)
+![Axios](https://img.shields.io/badge/Axios-HTTP%20Client-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green)
+![Backend](https://img.shields.io/badge/Backend-json--server-orange)
+![CRUD](https://img.shields.io/badge/CRUD-Create%20Read%20Update%20Delete-success)
+![Status](https://img.shields.io/badge/Status-Working-success)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-## Available Scripts
+Projet du **TP 8 – Développement d’une application React CRUD**.  
+Ce TP a pour objectif de **concevoir une application front-end complète** avec **React**, consommant une **API REST** via **Axios**, et implémentant toutes les opérations **CRUD**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📌 Sommaire
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [Objectifs du TP](#-objectifs-du-tp)
+2. [Fonctionnalités](#-fonctionnalités)
+3. [Stack technique](#-stack-technique)
+4. [Architecture du projet](#-architecture-du-projet)
+5. [Backend mock (API REST)](#-backend-mock-api-rest)
+6. [Démarrage rapide](#-démarrage-rapide)
+7. [Tests & démonstrations](#-tests--démonstrations)
+8. [Auteurs](#-auteurs)
+9. [Licence](#-licence)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎯 Objectifs du TP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Maîtriser les **fondamentaux de React**
+- Implémenter un **CRUD complet**
+- Consommer une **API REST** avec **Axios**
+- Gérer :
+  - États (`useState`)
+  - Effets (`useEffect`)
+  - Formulaires contrôlés
+- Appliquer un **design moderne et responsive**
+- Simuler un backend avec **json-server**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✨ Fonctionnalités
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Affichage de la liste des clients  <br/>
+✅ Ajout d’un client  <br/>
+✅ Modification d’un client  <br/>
+✅ Suppression d’un client (confirmation)  <br/>
+✅ Recherche dynamique  <br/>
+✅ Tri par colonnes  <br/>
+✅ Gestion des erreurs réseau  <br/>
+✅ Interface responsive (Bootstrap) <br/>
+✅ Backend mock REST sur `localhost:8080`  <br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Stack technique
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Technologie | Description |
+|------------|------------|
+| React | Frontend UI |
+| Axios | Client HTTP |
+| Bootstrap 5 | UI & Responsive |
+| Node.js | Runtime |
+| json-server | Backend REST mock |
+| VS Code | IDE |
+| Git / GitHub | Versioning |
+| OS | macOS |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏗️ Architecture du projet
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+tp1/
+├── db.json
+├── server.js
+├── package.json
+├── public/
+│
+├── src/
+│ ├── api/
+│ │ └── axiosConfig.js
+│ │
+│ ├── components/
+│ │ ├── CustomerComponent.jsx
+│ │ └── CustomerList.jsx
+│ │
+│ ├── App.js
+│ ├── App.css
+│ ├── index.js
+│ └── index.css
+│
+├── docs/
+│ ├── demo1.png
+│ ├── demo2.png
+│ └── demo3.png
+│
+└── README.md
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔌 Backend mock (API REST)
 
-### Code Splitting
+### Le backend est simulé à l’aide de **json-server** et expose les endpoints suivants : <br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Méthode | Endpoint | Description |
+|------|---------|------------|
+| GET | `/api/rest/customer/all` | Liste des clients |
+| POST | `/api/rest/customer/create` | Ajouter un client |
+| PUT | `/api/rest/customer/update/{identityRef}` | Modifier un client |
+| DELETE | `/api/rest/customer/delete/{identityRef}` | Supprimer un client |
 
-### Analyzing the Bundle Size
+**Le backend tourne sur :**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### 👉🏻 http://localhost:8080
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🚀 Démarrage rapide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 1️⃣ Prérequis
 
-### Deployment
+✅ Node.js  <br/>
+✅ npm  <br/>
+✅ Git  <br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2️⃣ Installation
+
+```
+git clone https://github.com/VOTRE_USERNAME/tp8-react-crud.git
+cd tp8-react-crud
+npm install
+```
+
+### 3️⃣ Lancer le backend
+
+```
+npm run backend
+```
+
+**Vérification :** <br/>
+
+
+```
+curl http://localhost:8080/api/rest/customer/all
+```
+
+### 4️⃣ Lancer le frontend <br/>
+
+```
+npm start
+```
+
+**Accès :** <br/>
+
+#### 👉🏻 http://localhost:3000 <br/>
+
+---
+
+## 🔗 Tests & démonstrations
+
+### 🔹 Test 1 — Interface principale
+
+| Interface principale |
+| -------------------- |
+| ![](docs/demo1.png)  |
+
+
+#### ➡️ Formulaire + table des clients <br/>
+
+
+### 🔹 Test 2 — Ajout & modification
+
+| Ajout / Édition     |
+| ------------------- |
+| ![](docs/demo2.png) |
+| ![](docs/demo3.png) |
+
+
+#### ➡️ CRUD complet avec validation <br/>
+
+### 🔹 Test 3 — Recherche, tri & suppression
+
+| Recherche & Delete  |
+| ------------------- |
+| ![](docs/demo4.png) |
+| ![](docs/demo5.png) |
+| ![](docs/demo6.png) |
+
+
+#### ➡️ Recherche dynamique + confirmation de suppression <br/>
+
+---
+
+## 👥 Auteurs
+
+Anas KRIR <br/>
+Adam EL YOURI <br/>
+
+Étudiants Ingénieurs — MIAGE <br/>
+TP réalisé dans le cadre du module Développement Web / React <br/>
+
+Technologies : React · Axios · Bootstrap · REST API · CRUD <br/>
+
+---
+
+## 📄 Licence 
+
+✅ Projet sous licence MIT <br/>
+Libre d’utilisation, modification et distribution à des fins pédagogiques. <br/>
+
+© 2025 — Anas KRIR & Adam EL YOURI <br/>
+
+---
