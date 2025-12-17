@@ -209,7 +209,7 @@ Anas KRIR <br/>
 Adam EL YOURI <br/>
 
 Étudiants Ingénieurs — MIAGE <br/>
-TP réalisé dans le cadre du module Développement Web / React <br/>
+TP réalisé dans le cadre du module ARCHITECTURE DES COMPOSANTS D'ENTREPRISES <br/>
 
 Technologies : React · Axios · Bootstrap · REST API · CRUD <br/>
 
