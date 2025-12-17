@@ -44,7 +44,7 @@ Thumbs.db
 coverage/
 
 # === Optional: keep db.json tracked (comment this OUT if you want db.json in git) ===
- db.json
+# db.json
 
 # === Optional: local backups ===
 *.bak

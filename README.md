@@ -135,8 +135,8 @@ tp1/
 ### 2️⃣ Installation
 
 ```
-git clone https://github.com/VOTRE_USERNAME/tp8-react-crud.git
-cd tp8-react-crud
+git clone git@github.com:AnasKrir/TP8-React-CRUD.git
+cd TP8-React-CRUD
 npm install
 ```
 
